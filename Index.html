@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockhub Festival 2026 - Route66 Asciano (PI)</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- STILI GENERALI --- */
+        :root {
+            --bg-color: #0d0d0d; /* Nero quasi totale per uno stile rock */
+            --text-color: #f2f2f2; /* Bianco sporco per leggibilità */
+            --accent-color: #ff3e3e; /* Rosso acceso come colore d'accento */
+            --font-main: 'Poppins', sans-serif;
+            --font-headings: 'Bebas Neue', sans-serif; /* Font impattante per titoli */
+            --font-logo: 'Anton', sans-serif; /* Font massiccio per il logo */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Scorrimento morbido quando si clicca sul menu */
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-headings);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 4rem; text-transform: uppercase; color: var(--accent-color); }
+        h2 { font-size: 3rem; text-align: center; color: var(--text-color); }
+
+        .section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER & HAMBURGER MENU --- */
+        header {
+            background-color: rgba(13, 13, 13, 0.95);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: var(--font-logo);
+            font-size: 2rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar a {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-toggle {
+            display: none; /* Nascosto su desktop */
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        /* --- HOME SECTION --- */
+        #home {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1498030697412-f0b4a45a16d5?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 6rem;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .event-info {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+
+        .event-dates {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .event-location {
+            color: var(--accent-color);
+        }
+
+        /* --- STILI SEZIONI --- */
+        /* CHI SIAMO */
+        #chi-siamo {
+            background-color: #141414;
+        }
+
+        /* LE BAND (Layout a griglia) */
+        #le-band {
+            background-color: var(--bg-color);
+        }
+
+        .band-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        .band-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .band-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .band-card h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .band-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* SPONSOR */
+        #sponsor {
+            background-color: #141414;
+            text-align: center;
+        }
+
+        .sponsor-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            opacity: 0.6;
+        }
+
+        .sponsor-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #666;
+            font-family: var(--font-headings);
+        }
+
+        /* CONTATTI */
+        #contatti {
+            background-color: var(--bg-color);
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-info p { margin-bottom: 15px; }
+
+        .social-links {
+            margin-top: 30px;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .social-links a:hover { color: var(--accent-color); }
+
+        /* FOOTER */
+        footer {
+            background-color: #050505;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- RESPONSIVE DESIGN (MOBILE) --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            .hero-content h1 { font-size: 4rem; }
+
+            .menu-toggle {
+                display: block; /* Mostra l'hamburger */
+            }
+
+            .navbar {
+                display: none; /* Nascondi il menu di default */
+                position: absolute;
+                top: 80px; /* Sotto l'header */
+                left: 0;
+                width: 100%;
+                background-color: rgba(13, 13, 13, 0.98);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar.active {
+                display: block; /* Mostra il menu quando attivo */
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .navbar a {
+                display: block;
+                padding: 15px;
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 80px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Rockhub</div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#chi-siamo">Chi Siamo</a></li>
+                <li><a href="#le-band">Le Band</a></li>
+                <li><a href="#sponsor">Gli Sponsor</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="hero-content container">
+            <h1>Rockhub festival</h1>
+            <div class="event-info">
+                <p class="event-dates">26 - 27 - 28 Giugno 2026</p>
+                <p class="event-location">Route66, Asciano (PI)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="chi-siamo" class="section">
+        <div class="container">
+            <h2>Il Festival</h2>
+            <p>Preparati per tre giorni di pura energia! Rockhub Festival 2026 porta il meglio della scena rock internazionale e locale nel cuore della Toscana. Un'esperienza unica fatta di musica potente, adrenalina e una location iconica come la Route66 di Asciano. Non è solo un festival, è uno stile di vita.</p>
+        </div>
+    </section>
+
+    <section id="le-band" class="section">
+        <div class="container">
+            <h2>Line-up</h2>
+            <div class="band-grid">
+                <div class="band-card"><h3>Thunder Core</h3><p>Sabato 27 (Headliner)</p></div>
+                <div class="band-card"><h3>Electric Void</h3><p>Domenica 28 (Headliner)</p></div>
+                <div class="band-card"><h3>Steel Pulse</h3><p>Venerdì 26 (Headliner)</p></div>
+                <div class="band-card"><h3>The Rust Kings</h3><p>Metal Alternativo</p></div>
+                <div class="band-card"><h3>Crimson Drive</h3><p>Hard Rock</p></div>
+                <div class="band-card"><h3>Echoes of Riot</h3><p>Punk Rock</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsor" class="section">
+        <div class="container">
+            <h2>Support Rockhub</h2>
+            <div class="sponsor-logos">
+                <div class="sponsor-logo">LOGO SPONSOR 1</div>
+                <div class="sponsor-logo">LOGO SPONSOR 2</div>
+                <div class="sponsor-logo">LOGO SPONSOR 3</div>
+                <div class="sponsor-logo">LOGO SPONSOR 4</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti" class="section">
+        <div class="container">
+            <h2>Contatti</h2>
+            <div class="contact-info">
+                <p>Hai domande? Scrivici!</p>
+                <p><strong>Email:</strong> info@rockhubfestival.it</p>
+                <p><strong>Press:</strong> press@rockhubfestival.it</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rockhub Festival. All rights reserved.</p>
+        <p>Route66 Asciano (PI) - Italy</p>
+    </footer>
+
+    <script>
+        // Seleziona gli elementi del DOM
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.navbar a');
+
+        // Aggiunge un evento 'click' all'hamburger per mostrare/nascondere il menu
+        mobileMenu.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Aggiunge/rimuove la classe 'active'
+        });
+
+        // Chiude il menu mobile quando si clicca su un link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
