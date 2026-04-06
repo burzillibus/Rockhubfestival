@@ -28,6 +28,7 @@ html {
     line-height: 1.6;
 }
 
+
 a {
     text-decoration: none;
     color: inherit;
@@ -56,6 +57,7 @@ h2 {
     font-size: 3rem;
     text-align: center;
     color: var(--text-color);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -72,6 +74,38 @@ h2 {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+}
+
+#chi-siamo .container,
+#le-band .container,
+#sponsor .container {
+    width: min(1000px, calc(100% - 120px));
+    margin: 0 auto;
+    background-color: rgba(8, 8, 8, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+}
+
+#contatti .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgba(8, 8, 8, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+}
+
+#chi-siamo p,
+#contatti p {
+    font-size: 1.08rem;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
 }
 
 /* --- HEADER & HAMBURGER MENU --- */
@@ -126,8 +160,7 @@ header {
 
 /* --- HOME SECTION --- */
 #home {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-        url('https://images.unsplash.com/photo-1498030697412-f0b4a45a16d5?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65));
     justify-content: center;
     text-align: center;
 }
@@ -136,12 +169,14 @@ header {
     font-size: 6rem;
     margin-bottom: 10px;
     line-height: 1;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.65);
 }
 
 .event-info {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 500;
     margin-top: 20px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 .event-dates {
@@ -156,12 +191,12 @@ header {
 /* --- STILI SEZIONI --- */
 /* CHI SIAMO */
 #chi-siamo {
-    background-color: #141414;
+    background-color: rgba(10, 10, 10, 0.38);
 }
 
 /* LE BAND (Layout a griglia) */
 #le-band {
-    background-color: var(--bg-color);
+    background-color: rgba(8, 8, 8, 0.28);
 }
 
 .band-grid {
@@ -271,7 +306,7 @@ header {
 
 /* SPONSOR */
 #sponsor {
-    background-color: #141414;
+    background-color: rgba(10, 10, 10, 0.38);
     text-align: center;
 }
 
@@ -307,7 +342,7 @@ header {
 
 /* CONTATTI */
 #contatti {
-    background-color: var(--bg-color);
+    background-color: rgba(8, 8, 8, 0.28);
 }
 
 .contact-info {
@@ -393,6 +428,19 @@ footer {
         padding: 80px 15px;
     }
 
+    #chi-siamo .container,
+    #le-band .container,
+    #sponsor .container {
+        width: min(1000px, calc(100% - 24px));
+        padding: 18px;
+    }
+
+    #contatti .container {
+        width: 100%;
+        max-width: 1100px;
+        padding: 18px;
+    }
+
     .band-photo-placeholder {
         min-height: 220px;
         font-size: 1.4rem;
@@ -402,7 +450,7 @@ footer {
 body {
     background-image: url('./images/rockhub_definitivo.png');
     background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 100% auto;
-    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
