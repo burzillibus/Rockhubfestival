@@ -66,9 +66,6 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    background: url('./images/rockhub_definitivo.png') no-repeat center center fixed;
-    background-size: cover;
 }
 
 .container {
@@ -283,14 +280,29 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    opacity: 0.6;
+}
+
+.sponsor-card-link {
+    display: block;
 }
 
 .sponsor-logo {
+    min-width: 220px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.03);
     font-size: 2rem;
     font-weight: bold;
-    color: #666;
+    color: #8b8b8b;
     font-family: var(--font-headings);
+    transition: transform 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.sponsor-card-link:hover .sponsor-logo {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    color: #f2f2f2;
 }
 
 /* CONTATTI */
@@ -388,6 +400,9 @@ footer {
 }
 
 body {
-    background: url('./images/rockhub_definitivo.png') no-repeat center center fixed;
-    background-size: cover;
+    background-image: url('./images/rockhub_definitivo.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    background-attachment: scroll;
 }
