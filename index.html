@@ -1,209 +1,92 @@
 <!DOCTYPE html>
-<html lang="it">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon">
-    <title>Rockhub Festival 2026</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="./resources/style.css">
-
-
+    <title>Rock Hub Festival</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
+    <div class="container">
+        <h1>Rock Hub Festival 2026</h1>
 
-        <nav class="navbar" id="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#chi-siamo">Chi Siamo</a></li>
-                <li><a href="#le-band">Line-up</a></li>
-                <li><a href="#sponsor">Sponsor</a></li>
-                <li><a href="#contatti">Contatti</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="section">
-        <div class="hero-content container">
-            <h1>
-                <div>
-                    <img src="./resources/images/rockhub_logo.png" alt="Rockhub Logo" class="logo-icon">
-            <p>
-                    26 - 27 - 28 Giugno 2026
-               </p>
-                    <img src="./resources/images/route66_logo.png" alt="Route66 Logo" class="logo-icon">
+        <div id="bandCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h2>Line-up</h2>
+                    <div class="band-grid">
+                        <div class="band">Band 1</div>
+                        <div class="band">Band 2</div>
+                        <div class="band">Band 3</div>
+                        <!-- More bands here -->
+                    </div>
                 </div>
-            </h1>
-            <div class="event-info">
-                <p class="event-location">Route66, Asciano (PI)</p>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="chi-siamo" class="section">
-        <div class="container">
-            <h2>RockHub Festival</h2>
-            <p>Preparati per tre giorni di pura energia! RockHub Festival 2026 porta il meglio della scena rock
-                emergente locale nel cuore della Toscana. Un'esperienza unica fatta di musica potente, adrenalina
-                e una location iconica come la Route66 di Asciano. Non è solo un festival, è un incontro di anime e rock music!</p>
-        </div>
-    </section>
-
-    <section id="le-band" class="section">
-        <div class="container">
-            <h2>Line-up</h2>
-            <div class="band-grid">
-                <a class="band-card-link" href="./bands/thunder-core.html" aria-label="Apri la pagina di Thunder Core">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">TC</div>
-                        <h3>Thunder Core</h3>
-                        <p>Sabato 27 (Headliner)</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./bands/electric-void.html"
-                    aria-label="Apri la pagina di Electric Void">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">EV</div>
-                        <h3>Electric Void</h3>
-                        <p>Domenica 28 (Headliner)</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./bands/steel-pulse.html" aria-label="Apri la pagina di Steel Pulse">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">SP</div>
-                        <h3>Steel Pulse</h3>
-                        <p>Venerdì 26 (Headliner)</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./bands/the-rust-kings.html"
-                    aria-label="Apri la pagina di The Rust Kings">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">RK</div>
-                        <h3>The Rust Kings</h3>
-                        <p>Metal Alternativo</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./bands/crimson-drive.html"
-                    aria-label="Apri la pagina di Crimson Drive">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">CD</div>
-                        <h3>Crimson Drive</h3>
-                        <p>Hard Rock</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./bands/echoes-of-riot.html"
-                    aria-label="Apri la pagina di Echoes of Riot">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">ER</div>
-                        <h3>Echoes of Riot</h3>
-                        <p>Punk Rock</p>
-                    </article>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="sponsor" class="section">
-        <div class="container">
-            <h2>Sponsor</h2>
-            <div class="band-grid">
-                <a class="band-card-link" href="./sponsor/ampforge-audio.html"
-                    aria-label="Apri la pagina di AmpForge Audio">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">AF</div>
-                        <h3>AmpForge Audio</h3>
-                        <p>Main Audio Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./sponsor/riffwear.html" aria-label="Apri la pagina di RiffWear">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">RW</div>
-                        <h3>RiffWear</h3>
-                        <p>Official Merch Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./sponsor/stagefuel.html" aria-label="Apri la pagina di StageFuel">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">SF</div>
-                        <h3>StageFuel</h3>
-                        <p>Food & Beverage Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./sponsor/roadcase-labs.html"
-                    aria-label="Apri la pagina di Roadcase Labs">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">RL</div>
-                        <h3>Roadcase Labs</h3>
-                        <p>Backline & Tech Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="./sponsor/vintage-valves.html"
-                    aria-label="Apri la pagina di Vintage Valves">
-                    <article class="band-card">
-                        <div class="band-logo" aria-hidden="true">VV</div>
-                        <h3>Vintage Valves</h3>
-                        <p>Instrument Partner</p>
-                    </article>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contatti" class="section">
-        <div class="container">
-            <h2>Contatti</h2>
-            <div class="contact-info">
-                <p>Hai domande? Scrivici!</p>
-                <p><strong>Email:</strong> info@rockhubfestival.it</p>
-
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-spotify"></i></a>
+                <div class="carousel-item">
+                    <h2>Line-up</h2>
+                    <div class="band-grid">
+                        <div class="band">Band 4</div>
+                        <div class="band">Band 5</div>
+                        <div class="band">Band 6</div>
+                        <!-- More bands here -->
+                    </div>
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#bandCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#bandCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <ol class="carousel-indicators">
+                <li data-target="#bandCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#bandCarousel" data-slide-to="1"></li>
+                <!-- More indicators here -->
+            </ol>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 RockHub Festival. All rights reserved.</p>
-    </footer>
+        <div id="sponsorCarousel" class="carousel slide mt-5" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h2>Sponsors</h2>
+                    <div class="sponsor-grid">
+                        <div class="sponsor">Sponsor 1</div>
+                        <div class="sponsor">Sponsor 2</div>
+                        <div class="sponsor">Sponsor 3</div>
+                        <!-- More sponsors here -->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <h2>Sponsors</h2>
+                    <div class="sponsor-grid">
+                        <div class="sponsor">Sponsor 4</div>
+                        <div class="sponsor">Sponsor 5</div>
+                        <div class="sponsor">Sponsor 6</div>
+                        <!-- More sponsors here -->
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#sponsorCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#sponsorCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <ol class="carousel-indicators">
+                <li data-target="#sponsorCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#sponsorCarousel" data-slide-to="1"></li>
+                <!-- More indicators here -->
+            </ol>
+        </div>
 
-    <script>
-        // Seleziona gli elementi del DOM
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('.navbar a');
+    </div>
 
-        // Aggiunge un evento 'click' all'hamburger per mostrare/nascondere il menu
-        mobileMenu.addEventListener('click', () => {
-            navbar.classList.toggle('active'); // Aggiunge/rimuove la classe 'active'
-        });
-
-        // Chiude il menu mobile quando si clicca su un link
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navbar.classList.remove('active');
-            });
-        });
-    </script>
 </body>
-
 </html>
