@@ -63,6 +63,31 @@
     const root = document.getElementById('band-root');
     if (!root) return;
 
+    // Inietta Font Awesome se non già presente
+    if (!document.querySelector('link[href*="font-awesome"]')) {
+        const fa = document.createElement('link');
+        fa.rel = 'stylesheet';
+        fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+        document.head.appendChild(fa);
+    }
+
+    // Inietta header con navbar
+    const header = document.createElement('header');
+    header.innerHTML = `
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#le-band">Line-up</a></li>
+                <li><a href="../index.html#sponsor">Sponsor</a></li>
+                <li><a href="../index.html#contatti">Contatti</a></li>
+            </ul>
+        </nav>`;
+    document.body.prepend(header);
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+        document.getElementById('navbar').classList.toggle('active');
+    });
+
     document.title = `${info.name} - Rockhub Festival 2026`;
 
     const article = document.createElement('article');
