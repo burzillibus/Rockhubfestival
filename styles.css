@@ -238,7 +238,7 @@ header {
 .sponsor-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -293,7 +293,8 @@ header {
 
 .carousel-track>.band-card-link {
     scroll-snap-align: start;
-    flex: 0 0 min(320px, 100%);
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
 }
 
 .carousel-button {
@@ -580,6 +581,14 @@ footer {
         width: 100%;
         max-width: 1100px;
         padding: 18px;
+    }
+
+    .carousel-track>.band-card-link {
+        flex: 0 0 100%;
+    }
+
+    .sponsor-grid {
+        grid-template-columns: 1fr;
     }
 }
 

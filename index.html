@@ -327,19 +327,19 @@
             });
 
             const dots = Array.from(dotsContainer.children);
+            let currentIndex = 0;
             const updateDots = () => {
                 const scrollLeft = track.scrollLeft;
-                let closestIndex = 0;
                 let closestDistance = Infinity;
                 items.forEach((item, index) => {
                     const distance = Math.abs(scrollLeft - item.offsetLeft);
                     if (distance < closestDistance) {
                         closestDistance = distance;
-                        closestIndex = index;
+                        currentIndex = index;
                     }
                 });
                 dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === closestIndex);
+                    dot.classList.toggle('active', index === currentIndex);
                 });
             };
 
@@ -350,11 +350,13 @@
 
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const offset = track.clientWidth;
+                    const visibleCount = Math.round(track.clientWidth / items[0].offsetWidth) || 1;
                     if (button.getAttribute('aria-label').includes('sinistra')) {
-                        track.scrollBy({ left: -offset, behavior: 'smooth' });
+                        const targetIndex = Math.max(0, currentIndex - visibleCount);
+                        track.scrollTo({ left: items[targetIndex].offsetLeft, behavior: 'smooth' });
                     } else {
-                        track.scrollBy({ left: offset, behavior: 'smooth' });
+                        const targetIndex = Math.min(items.length - 1, currentIndex + visibleCount);
+                        track.scrollTo({ left: items[targetIndex].offsetLeft, behavior: 'smooth' });
                     }
                 });
             });
