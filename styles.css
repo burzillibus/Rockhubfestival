@@ -257,7 +257,6 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    flex-wrap: wrap;
 }
 
 .carousel-header h3 {
@@ -583,6 +582,22 @@ footer {
         padding: 18px;
     }
 
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1050px) {
+    .carousel-track>.band-card-link {
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
     .carousel-track>.band-card-link {
         flex: 0 0 100%;
     }
