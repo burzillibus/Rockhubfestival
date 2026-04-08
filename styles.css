@@ -269,6 +269,14 @@ header {
     padding: 28px;
 }
 
+.band-photo {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
 .band-photo-placeholder {
     width: 100%;
     min-height: 320px;
@@ -439,11 +447,6 @@ footer {
         width: 100%;
         max-width: 1100px;
         padding: 18px;
-    }
-
-    .band-photo-placeholder {
-        min-height: 220px;
-        font-size: 1.4rem;
     }
 }
 
