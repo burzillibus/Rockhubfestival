@@ -47,6 +47,10 @@
         'black-ravens': {
             name: 'The Black Ravens',
             date: 'Domenica 28 Giugno 2026'
+        },
+        'volt-hammer': {
+            name: 'Volt Hammer',
+            date: 'Domenica 28 Giugno 2026'
         }
     };
 
