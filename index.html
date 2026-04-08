@@ -312,53 +312,55 @@
             const buttons = row.querySelectorAll('.carousel-button');
             const items = Array.from(track.children);
 
+            const getVisibleCount = () => Math.round(track.clientWidth / items[0].offsetWidth) || 1;
+            const getPageCount = () => Math.ceil(items.length / getVisibleCount());
+
+            let currentPage = 0;
+
             const dotsContainer = document.createElement('div');
             dotsContainer.className = 'carousel-dots';
-            items.forEach((item, index) => {
-                const dot = document.createElement('button');
-                dot.type = 'button';
-                dot.className = 'carousel-dot';
-                dot.setAttribute('aria-label', `Vai all'elemento ${index + 1}`);
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    track.scrollTo({ left: item.offsetLeft, behavior: 'smooth' });
-                });
-                dotsContainer.appendChild(dot);
-            });
+            track.after(dotsContainer);
 
-            const dots = Array.from(dotsContainer.children);
-            let currentIndex = 0;
-            const updateDots = () => {
-                const scrollLeft = track.scrollLeft;
-                let closestDistance = Infinity;
-                items.forEach((item, index) => {
-                    const distance = Math.abs(scrollLeft - item.offsetLeft);
-                    if (distance < closestDistance) {
-                        closestDistance = distance;
-                        currentIndex = index;
-                    }
-                });
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
+            const goToPage = (page) => {
+                const pageCount = getPageCount();
+                currentPage = Math.max(0, Math.min(page, pageCount - 1));
+                const targetIndex = currentPage * getVisibleCount();
+                track.scrollTo({ left: items[targetIndex].offsetLeft, behavior: 'smooth' });
+                Array.from(dotsContainer.children).forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentPage);
                 });
             };
 
-            track.after(dotsContainer);
-            track.addEventListener('scroll', () => {
-                window.requestAnimationFrame(updateDots);
-            });
+            const buildDots = () => {
+                dotsContainer.innerHTML = '';
+                const pageCount = getPageCount();
+                for (let i = 0; i < pageCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'carousel-dot';
+                    if (i === currentPage) dot.classList.add('active');
+                    dot.setAttribute('aria-label', `Vai alla pagina ${i + 1}`);
+                    dot.addEventListener('click', () => goToPage(i));
+                    dotsContainer.appendChild(dot);
+                }
+            };
+
+            buildDots();
 
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const visibleCount = Math.round(track.clientWidth / items[0].offsetWidth) || 1;
                     if (button.getAttribute('aria-label').includes('sinistra')) {
-                        const targetIndex = Math.max(0, currentIndex - visibleCount);
-                        track.scrollTo({ left: items[targetIndex].offsetLeft, behavior: 'smooth' });
+                        goToPage(currentPage - 1);
                     } else {
-                        const targetIndex = Math.min(items.length - 1, currentIndex + visibleCount);
-                        track.scrollTo({ left: items[targetIndex].offsetLeft, behavior: 'smooth' });
+                        goToPage(currentPage + 1);
                     }
                 });
+            });
+
+            window.addEventListener('resize', () => {
+                currentPage = 0;
+                buildDots();
+                goToPage(0);
             });
         });
     </script>
