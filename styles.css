@@ -79,7 +79,7 @@ h2 {
 #chi-siamo .container,
 #le-band .container,
 #sponsor .container {
-    width: min(1000px, calc(100% - 120px));
+    width: min(1200px, calc(100% - 80px));
     margin: 0 auto;
     background-color: rgba(8, 8, 8, 0.42);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -206,6 +206,13 @@ header {
     width: 100%;
 }
 
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
 .carousel {
     display: grid;
     gap: 40px;
@@ -255,7 +262,7 @@ header {
     background: rgba(255, 255, 255, 0.05);
 }
 
-.carousel-track > .band-card-link {
+.carousel-track>.band-card-link {
     scroll-snap-align: start;
     flex: 0 0 min(320px, 100%);
 }

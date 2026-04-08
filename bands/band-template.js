@@ -10,19 +10,43 @@
         },
         'steel-pulse': {
             name: 'Steel Pulse',
-            date: 'Venerdi 26 Giugno 2026 - Headliner'
+            date: 'Venerdì 26 Giugno 2026 - Headliner'
         },
         'the-rust-kings': {
             name: 'The Rust Kings',
-            date: 'Metal Alternativo'
+            date: 'Venerdì 26 Giugno 2026'
+        },
+        'iron-wolves': {
+            name: 'Iron Wolves',
+            date: 'Venerdì 26 Giugno 2026'
         },
         'oredisole': {
             name: 'Oredisole',
-            date: 'Hard Rock'
+            date: 'Sabato 27 Giugno 2026'
+        },
+        'neon-decay': {
+            name: 'Neon Decay',
+            date: 'Sabato 27 Giugno 2026'
         },
         'echoes-of-riot': {
             name: 'Echoes of Riot',
-            date: 'Punk Rock'
+            date: 'Domenica 28 Giugno 2026'
+        },
+        'phantom-surge': {
+            name: 'Phantom Surge',
+            date: 'Domenica 28 Giugno 2026'
+        },
+        'dead-circuit': {
+            name: 'Dead Circuit',
+            date: 'Domenica 28 Giugno 2026'
+        },
+        'storm-engine': {
+            name: 'Storm Engine',
+            date: 'Domenica 28 Giugno 2026'
+        },
+        'black-ravens': {
+            name: 'The Black Ravens',
+            date: 'Domenica 28 Giugno 2026'
         }
     };
 
