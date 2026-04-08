@@ -16,8 +16,8 @@
             name: 'The Rust Kings',
             date: 'Metal Alternativo'
         },
-        'crimson-drive': {
-            name: 'Crimson Drive',
+        'oredisole': {
+            name: 'Oredisole',
             date: 'Hard Rock'
         },
         'echoes-of-riot': {
