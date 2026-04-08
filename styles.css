@@ -433,6 +433,39 @@ header {
     color: #dbdbdb;
 }
 
+.location-info {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.location-details {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 1rem;
+    padding-top: 8px;
+}
+
+.location-details p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.location-details i {
+    color: var(--accent-color);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.map-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
 .back-link {
     display: inline-block;
     margin-top: 24px;
@@ -581,6 +614,19 @@ footer {
         width: 100%;
         max-width: 1100px;
         padding: 18px;
+    }
+
+    .location-info {
+        flex-direction: column;
+    }
+
+    .location-details {
+        flex: none;
+        width: 100%;
+    }
+
+    .map-wrapper {
+        width: 100%;
     }
 
     .sponsor-grid {
