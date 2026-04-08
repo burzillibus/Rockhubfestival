@@ -63,7 +63,6 @@ h2 {
 
 .section {
     padding: 100px 20px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -165,18 +164,33 @@ header {
     text-align: center;
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .hero-content h1 {
     font-size: 6rem;
     margin-bottom: 10px;
     line-height: 1;
     text-shadow: 0 8px 20px rgba(0, 0, 0, 0.65);
+    width: min(1200px, calc(100% - 80px));
 }
 
 .event-info {
     font-size: 1.5rem;
     font-weight: 500;
     margin-top: 20px;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+    /*     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7); */
+    width: min(1200px, calc(100% - 80px));
+    /*     background-color: rgba(8, 8, 8, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.1); */
+    border-radius: 14px;
+    /*     padding: 28px; */
+    /*     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px); */
 }
 
 .event-dates {
@@ -188,12 +202,27 @@ header {
     color: var(--accent-color);
 }
 
-/* --- STILI SEZIONI --- */
-/* CHI SIAMO */
-#chi-siamo {
-    background-color: transparent;
+.event-subtitle {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 16px;
+    margin-bottom: 4px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
+.event-description {
+    margin-top: 16px;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+    line-height: 1.7;
+}
+
+/* --- STILI SEZIONI --- */
 /* LE BAND (Layout a griglia) */
 #le-band {
     background-color: transparent;
