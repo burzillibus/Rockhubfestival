@@ -355,6 +355,16 @@ header {
     background: radial-gradient(circle at top, rgba(255, 62, 62, 0.2), rgba(0, 0, 0, 0.35));
 }
 
+.sponsor-logo {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    border: 2px solid rgba(255, 62, 62, 0.7);
+    background: radial-gradient(circle at top, rgba(255, 62, 62, 0.2), rgba(0, 0, 0, 0.35));
+    object-fit: cover;
+}
+
 /* PAGINE SINGOLE BAND */
 .band-page {
     min-height: 100vh;
