@@ -141,7 +141,7 @@ header {
 
 /* --- HOME SECTION --- */
 #home {
-    background: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
     justify-content: center;
     text-align: center;
 }
