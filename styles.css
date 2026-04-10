@@ -76,7 +76,7 @@ h2 {
 }
 
 /* Box panel condiviso da tutte le sezioni */
-#le-band .container,
+#band .container,
 #sponsor .container,
 #contatti .container,
 #mappa .container {
@@ -362,7 +362,6 @@ header {
     margin: 0 auto 16px;
     border: 2px solid rgba(255, 62, 62, 0.7);
     background: radial-gradient(circle at top, rgba(255, 62, 62, 0.2), rgba(0, 0, 0, 0.35));
-    object-fit: cover;
 }
 
 /* PAGINE SINGOLE BAND */
@@ -580,7 +579,7 @@ footer {
         padding: 80px 15px;
     }
 
-    #le-band .container,
+    #band .container,
     #sponsor .container,
     #contatti .container,
     #mappa .container {
@@ -632,4 +631,11 @@ body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+}
+
+/* Ensure sponsor logos fit the box without distortion */
+.sponsor-logo {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
 }

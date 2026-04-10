@@ -78,7 +78,7 @@
         <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="../index.html#home">Home</a></li>
-                <li><a href="../index.html#le-band">Line-up</a></li>
+                <li><a href="../index.html#band">Line-up</a></li>
                 <li><a href="../index.html#sponsor">Sponsor</a></li>
                 <li><a href="../index.html#contatti">Contatti</a></li>
                 <li><a href="../index.html#mappa">Come Raggiungerci</a></li>
@@ -115,7 +115,7 @@
 
     const backLink = document.createElement('a');
     backLink.className = 'back-link';
-    backLink.href = '../index.html#le-band';
+    backLink.href = '../index.html#band';
     backLink.textContent = 'Torna alla Line-up';
 
     root.innerHTML = '';
