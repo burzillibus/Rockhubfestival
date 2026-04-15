@@ -1,63 +1,25 @@
 (() => {
     const bandData = {
-        'thunder-core': {
-            name: 'Thunder Core',
-            date: 'Sabato 27 Giugno 2026 - Headliner'
-        },
-        'electric-void': {
-            name: 'Electric Void',
-            date: 'Domenica 28 Giugno 2026 - Headliner'
-        },
-        'steel-pulse': {
-            name: 'Steel Pulse',
-            date: 'Venerdì 26 Giugno 2026 - Headliner'
-        },
-        'the-rust-kings': {
-            name: 'The Rust Kings',
-            date: 'Venerdì 26 Giugno 2026'
-        },
-        'iron-wolves': {
-            name: 'Iron Wolves',
-            date: 'Venerdì 26 Giugno 2026'
-        },
-        'oredisole': {
-            name: 'Oredisole',
-            date: 'Sabato 27 Giugno 2026'
-        },
-        'neon-decay': {
-            name: 'Neon Decay',
-            date: 'Sabato 27 Giugno 2026'
-        },
-        'echoes-of-riot': {
-            name: 'Echoes of Riot',
-            date: 'Domenica 28 Giugno 2026'
-        },
-        'phantom-surge': {
-            name: 'Phantom Surge',
-            date: 'Domenica 28 Giugno 2026'
-        },
-        'dead-circuit': {
-            name: 'Dead Circuit',
-            date: 'Domenica 28 Giugno 2026'
-        },
-        'storm-engine': {
-            name: 'Storm Engine',
-            date: 'Domenica 28 Giugno 2026'
-        },
-        'black-ravens': {
-            name: 'The Black Ravens',
-            date: 'Domenica 28 Giugno 2026'
-        },
-        'volt-hammer': {
-            name: 'Volt Hammer',
-            date: 'Domenica 28 Giugno 2026'
-        }
+        'thunder-core': { name: 'Thunder Core' },
+        'electric-void': { name: 'Electric Void' },
+        'steel-pulse': { name: 'Steel Pulse' },
+        'the-rust-kings': { name: 'The Rust Kings' },
+        'iron-wolves': { name: 'Iron Wolves' },
+        'oredisole': { name: 'Oredisole' },
+        'neon-decay': { name: 'Neon Decay' },
+        'echoes-of-riot': { name: 'Echoes of Riot' },
+        'phantom-surge': { name: 'Phantom Surge' },
+        'dead-circuit': { name: 'Dead Circuit' },
+        'storm-engine': { name: 'Storm Engine' },
+        'black-ravens': { name: 'The Black Ravens' },
+        'volt-hammer': { name: 'Volt Hammer' },
+        'mothers': { name: 'Mother\'s Well' },
+        'noblesse': { name: 'Noblesse' }
     };
 
     const slug = window.location.pathname.split('/').pop().replace('.html', '');
     const info = bandData[slug] || {
-        name: slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-        date: ''
+        name: slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
     };
 
     const root = document.getElementById('band-root');
@@ -99,9 +61,6 @@
     const heading = document.createElement('h1');
     heading.textContent = info.name;
 
-    const eventLocation = document.createElement('p');
-    eventLocation.className = 'event-location';
-    eventLocation.textContent = info.date;
 
     const image = document.createElement('img');
     image.className = 'band-photo';
@@ -122,7 +81,7 @@
 
     root.innerHTML = '';
     root.appendChild(article);
-    article.append(heading, eventLocation, image, description);
+    article.append(heading, image, description);
     if (socialLinks) {
         article.appendChild(socialLinks);
     }
