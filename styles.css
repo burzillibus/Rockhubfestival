@@ -246,6 +246,7 @@ header {
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    padding-top: 10px;
     padding-bottom: 8px;
 }
 
@@ -371,7 +372,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 120px 20px 70px;
- /*   background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.9));*/
+    /*   background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.9));*/
 }
 
 .band-detail {
