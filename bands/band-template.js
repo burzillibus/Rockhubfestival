@@ -63,6 +63,8 @@
     const root = document.getElementById('band-root');
     if (!root) return;
 
+    const socialLinks = document.querySelector('.social-links');
+
     // Inietta Font Awesome se non già presente
     if (!document.querySelector('link[href*="font-awesome"]')) {
         const fa = document.createElement('link');
@@ -120,7 +122,11 @@
 
     root.innerHTML = '';
     root.appendChild(article);
-    article.append(heading, eventLocation, image, description, backLink);
+    article.append(heading, eventLocation, image, description);
+    if (socialLinks) {
+        article.appendChild(socialLinks);
+    }
+    article.appendChild(backLink);
 
     fetch(`../resources/bands/${slug}/description.txt`)
         .then(response => {
