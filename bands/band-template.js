@@ -5,7 +5,7 @@
         'oredisole': { name: 'Oredisole' },
         'fullflow': { name: 'The Full Flow Project' },
         'mothers': { name: 'Mother\'s Well' },
-        'lopinto': { name: 'Lopinto' },
+        'aftermath': { name: 'Aftermath' },
         'kimaera': { name: 'Kimaera' },
         'monochromej': { name: 'Monochrome J' },
         'framework': { name: 'Framework' },
