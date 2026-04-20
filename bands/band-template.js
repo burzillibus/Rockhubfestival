@@ -1,19 +1,17 @@
 (() => {
     const bandData = {
-        'thunder-core': { name: 'Thunder Core' },
-        'electric-void': { name: 'Electric Void' },
-        'steel-pulse': { name: 'Steel Pulse' },
-        'the-rust-kings': { name: 'The Rust Kings' },
-        'iron-wolves': { name: 'Iron Wolves' },
+        'reel-tape': { name: 'Reel Tape' },
+        'moscato': { name: 'Moscato Blues Band' },
         'oredisole': { name: 'Oredisole' },
-        'neon-decay': { name: 'Neon Decay' },
-        'echoes-of-riot': { name: 'Echoes of Riot' },
-        'phantom-surge': { name: 'Phantom Surge' },
-        'dead-circuit': { name: 'Dead Circuit' },
-        'storm-engine': { name: 'Storm Engine' },
-        'black-ravens': { name: 'The Black Ravens' },
-        'volt-hammer': { name: 'Volt Hammer' },
+        'fullflow': { name: 'The Full Flow Project' },
         'mothers': { name: 'Mother\'s Well' },
+        'lopinto': { name: 'Lopinto' },
+        'kimaera': { name: 'Kimaera' },
+        'monochromej': { name: 'Monochrome J' },
+        'framework': { name: 'Framework' },
+        'montani': { name: 'Montani' },
+        'lips': { name: 'L.I.P.S.' },
+        'antartica': { name: 'Antartica' },
         'noblesse': { name: 'Noblesse' }
     };
 
