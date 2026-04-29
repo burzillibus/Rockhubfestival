@@ -9,7 +9,7 @@
         'kimaera': { name: 'Kimaera' },
         'monochromej': { name: 'Monochrome J' },
         'framework': { name: 'Framework' },
-        'montani': { name: 'Montani' },
+        'yourghost': { name: 'yourghost' },
         'lips': { name: 'L.I.P.S.' },
         'antartica': { name: 'Antartica' },
         'noblesse': { name: 'Noblesse' }
