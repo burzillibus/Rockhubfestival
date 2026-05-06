@@ -11,7 +11,7 @@
         'framework': { name: 'Framework' },
         'yourghost': { name: 'yourghost' },
         'lips': { name: 'L.I.P.S.' },
-        'antartica': { name: 'Antartica' },
+        'antartika': { name: 'Antartika' },
         'noblesse': { name: 'Noblesse' }
     };
 
