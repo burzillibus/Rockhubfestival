@@ -412,6 +412,7 @@ header {
 .band-description {
     font-size: 1.05rem;
     color: #dbdbdb;
+    white-space: pre-line;
 }
 
 .location-info {
