@@ -79,6 +79,7 @@ h2 {
 #band .container,
 #sponsor .container,
 #contatti .container,
+#suona-con-noi .container,
 #mappa .container {
     width: min(1200px, calc(100% - 80px));
     margin: 0 auto;
