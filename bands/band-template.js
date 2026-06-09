@@ -8,8 +8,8 @@
         'aftermath': { name: 'Aftermath' },
         'kimaera': { name: 'Kimaera' },
         'monochromej': { name: 'Monochrome J' },
-        'framework': { name: 'Framework' },
-        'yourghost': { name: 'yourghost' },
+        'framework': { name: 'Frameworks' },
+        'yourghost': { name: 'Your Ghost' },
         'lips': { name: 'L.I.P.S.' },
         'antartika': { name: 'Antartika' },
         'noblesse': { name: 'Noblesse' }
