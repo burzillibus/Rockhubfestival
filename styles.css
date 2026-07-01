@@ -508,6 +508,21 @@ header {
     margin-bottom: 15px;
 }
 
+#suona-con-noi .contact-info a {
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+#suona-con-noi .contact-info a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 62, 62, 0.45);
+}
+
 .social-links {
     margin-top: 30px;
     font-size: 2rem;
