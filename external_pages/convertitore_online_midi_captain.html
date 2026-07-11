@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDI Captain Wallpaper Converter - Don Rocko Edition</title>
+    <!-- Tailwind CSS per uno stile moderno e rock-dark -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons per icone eleganti -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;400;600;700&display=swap');
+        
+        .font-rock {
+            font-family: 'Cinzel', serif;
+        }
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Simula lo schermo fisico del MIDI Captain */
+        .midi-screen-bezel {
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.9), 0 4px 20px rgba(255, 191, 0, 0.15);
+            background: #0f0f11;
+            border: 4px solid #2d2d30;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0b0c] text-gray-200 font-sans min-h-screen flex flex-col justify-between selection:bg-[#ffbf00] selection:text-black">
+
+    <!-- Header -->
+    <header class="border-b border-[#1f1f22] bg-[#0f0f11]/80 backdrop-blur-md sticky top-0 z-50 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#ffbf00] rounded-lg flex items-center justify-center shadow-lg shadow-[#ffbf00]/20">
+                    <i data-lucide="music" class="text-black w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wider font-rock text-white">DON ROCKO</h1>
+                    <p class="text-xs text-[#ffbf00] font-semibold tracking-widest uppercase">MIDI Captain Display Tool</p>
+                </div>
+            </div>
+            <div class="text-xs bg-[#1a1a1c] border border-[#2d2d30] px-3 py-1.5 rounded-full text-gray-400">
+                Standard: <span class="text-[#ffbf00] font-mono">240x240 px | 24-bit RGB888 BMP</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full flex-grow">
+        
+        <!-- Left Column: Tool & Inputs (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+            <div class="bg-[#0f0f11] border border-[#1f1f22] rounded-2xl p-6 shadow-xl">
+                <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                    <i data-lucide="upload-cloud" class="text-[#ffbf00]"></i> 
+                    Carica il Logo del Locale
+                </h2>
+                <p class="text-sm text-gray-400 mb-6">
+                    Trascina qui l'immagine <span class="font-mono text-[#ffbf00]">edited-image.jpg</span> di Don Rocko (o qualsiasi altra immagine) per elaborarla istantaneamente con le specifiche hardware ufficiali.
+                </p>
+
+                <!-- Drag & Drop Zone -->
+                <div id="drop-zone" class="border-2 border-dashed border-[#2d2d30] hover:border-[#ffbf00] transition-all rounded-xl p-8 text-center cursor-pointer bg-[#0b0b0c] group">
+                    <input type="file" id="file-input" accept="image/*" class="hidden">
+                    <div class="flex flex-col items-center justify-center gap-3">
+                        <div class="w-14 h-14 bg-[#1a1a1c] group-hover:bg-[#ffbf00]/10 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="image" class="text-gray-400 group-hover:text-[#ffbf00] w-8 h-8 transition-colors"></i>
+                        </div>
+                        <p class="font-semibold text-white group-hover:text-[#ffbf00] transition-colors">Scegli un file o trascinalo qui</p>
+                        <p class="text-xs text-gray-500">Supporta JPG, PNG, WEBP, BMP</p>
+                    </div>
+                </div>
+
+                <!-- Controls & Adjustments (Hidden initially until image loaded) -->
+                <div id="controls-panel" class="hidden mt-6 pt-6 border-t border-[#1f1f22] space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-white">Regola l'Inquadratura (Zoom/Ritaglio)</span>
+                        <span id="zoom-value" class="text-xs bg-[#1a1a1c] px-2.5 py-1 rounded text-gray-400 font-mono">100%</span>
+                    </div>
+                    <input type="range" id="zoom-slider" min="100" max="250" value="100" class="w-full h-1.5 bg-[#1f1f22] rounded-lg appearance-none cursor-pointer accent-[#ffbf00]">
+                    
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button id="btn-crop-center" class="text-xs bg-[#1a1a1c] hover:bg-[#2d2d30] text-white px-3 py-1.5 rounded-lg transition-colors border border-[#2d2d30]">
+                            Centra Ritaglio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructions -->
+            <div class="bg-[#0f0f11] border border-[#1f1f22] rounded-2xl p-6 space-y-4">
+                <h3 class="text-md font-bold text-white flex items-center gap-2">
+                    <i data-lucide="help-circle" class="text-[#ffbf00]"></i> 
+                    Come installarlo sul pedale MIDI Captain:
+                </h3>
+                <ol class="list-decimal list-inside text-sm text-gray-400 space-y-2.5 pl-1">
+                    <li>Scarica il file <span class="font-mono text-[#ffbf00]">wp1.bmp</span> generato da questo tool.</li>
+                    <li>Spegni il tuo <strong>MIDI Captain 6 Mini</strong>.</li>
+                    <li>Tieni premuto il pulsante <strong>Key 1</strong> sul pedale mentre colleghi il cavo USB al computer per avviarlo in modalità <span class="italic text-white">USB Deep Setup</span>.</li>
+                    <li>Nel computer apparirà l'unità disco <span class="font-mono text-white">MIDICAPTAIN</span>. Copia il file nella cartella <span class="font-mono text-[#ffbf00]">wallpapers</span>.</li>
+                    <li>Apri il file <span class="font-mono text-white">GlobalSetup.txt</span> nella cartella principale e imposta: <br><code class="bg-[#0b0b0c] text-white px-2 py-0.5 rounded font-mono border border-[#1f1f22] block mt-1">WALLPAPER = [1]</code></li>
+                    <li>Salva il file, scollega la memoria in sicurezza e riavvia il pedale.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Simulator (5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col items-center gap-6">
+            
+            <!-- Real Hardware Simulator Box -->
+            <div class="w-full bg-[#141416] border border-[#252528] rounded-3xl p-6 shadow-2xl flex flex-col items-center">
+                <span class="text-[10px] text-gray-500 font-mono tracking-widest uppercase mb-4">MOCKUP MIDI CAPTAIN 6 MINI</span>
+                
+                <!-- Physical Screen Bezel -->
+                <div class="w-72 h-72 rounded-[40px] midi-screen-bezel p-6 flex items-center justify-center relative">
+                    <!-- Rounded Screen Outer -->
+                    <div class="w-56 h-56 rounded-[17px] overflow-hidden bg-black relative flex items-center justify-center">
+                        
+                        <!-- Empty State Screen -->
+                        <div id="screen-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+                            <i data-lucide="smartphone" class="w-12 h-12 text-gray-600 mb-2 animate-pulse"></i>
+                            <p class="text-xs text-gray-500 font-mono">Schermo Spento</p>
+                            <p class="text-[10px] text-gray-600 mt-1">In attesa dell'immagine...</p>
+                        </div>
+
+                        <!-- Canvas to display processed output -->
+                        <canvas id="output-canvas" width="240" height="240" class="w-full h-full object-cover hidden"></canvas>
+                    </div>
+
+                    <!-- Screen Brand Label -->
+                    <div class="absolute bottom-1.5 text-[8px] font-mono text-gray-500 tracking-wider">
+                        PAINT AUDIO • DISPLAY
+                    </div>
+                </div>
+
+                <!-- Downloader Button -->
+                <button id="download-btn" disabled class="mt-6 w-full bg-gray-800 text-gray-500 cursor-not-allowed font-semibold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 border border-transparent">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    Genera ed Esporta wp1.bmp
+                </button>
+            </div>
+
+            <!-- Diagnostics -->
+            <div class="w-full bg-[#0f0f11] border border-[#1f1f22] rounded-2xl p-4 text-xs font-mono text-gray-500 space-y-1">
+                <div class="flex justify-between"><span class="text-gray-400">Formato:</span> <span class="text-white">Windows BMP (RGB888)</span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Risoluzione:</span> <span class="text-white">240 x 240 pixel</span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Profondità Colore:</span> <span class="text-white">24-bit per pixel</span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Maschera Angoli:</span> <span class="text-[#ffbf00]">17px (Nera, Hardware Safe)</span></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#1f1f22] bg-[#0f0f11] py-4 text-center text-xs text-gray-500">
+        <p>© 2026 Don Rocko Club. Sviluppato per la community dei musicisti rock toscani.</p>
+    </footer>
+
+    <!-- JS Logic for Processing & 24-bit BMP Encoding -->
+    <script>
+        // Inizializzazione icone
+        lucide.createIcons();
+
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const screenPlaceholder = document.getElementById('screen-placeholder');
+        const canvas = document.getElementById('output-canvas');
+        const ctx = canvas.getContext('2d');
+        const downloadBtn = document.getElementById('download-btn');
+        const controlsPanel = document.getElementById('controls-panel');
+        const zoomSlider = document.getElementById('zoom-slider');
+        const zoomValue = document.getElementById('zoom-value');
+        const btnCropCenter = document.getElementById('btn-crop-center');
+
+        let loadedImage = null;
+        let cropState = {
+            zoom: 1.0,
+            offsetX: 0,
+            offsetY: 0
+        };
+
+        // Event Listeners per Drag & Drop
+        dropZone.addEventListener('click', () => fileInput.click());
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-[#ffbf00]', 'bg-[#ffbf00]/5');
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-[#ffbf00]', 'bg-[#ffbf00]/5');
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-[#ffbf00]', 'bg-[#ffbf00]/5');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) {
+                alert('Errore: Per favore carica solo file di immagine validi.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const img = new Image();
+                img.onload = () => {
+                    loadedImage = img;
+                    // Reset parametri ritaglio
+                    cropState.zoom = 1.0;
+                    cropState.offsetX = 0;
+                    cropState.offsetY = 0;
+                    zoomSlider.value = 100;
+                    zoomValue.textContent = '100%';
+                    
+                    // Mostra pannelli e nascondi placeholder
+                    screenPlaceholder.classList.add('hidden');
+                    canvas.classList.remove('hidden');
+                    controlsPanel.classList.remove('hidden');
+                    
+                    // Abilita pulsante download
+                    downloadBtn.disabled = false;
+                    downloadBtn.className = "mt-6 w-full bg-[#ffbf00] hover:bg-[#e0a600] text-black font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#ffbf00]/10 border border-transparent cursor-pointer";
+
+                    renderImage();
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Slider Zoom
+        zoomSlider.addEventListener('input', (e) => {
+            cropState.zoom = parseFloat(e.target.value) / 100;
+            zoomValue.textContent = e.target.value + '%';
+            renderImage();
+        });
+
+        btnCropCenter.addEventListener('click', () => {
+            cropState.zoom = 1.0;
+            cropState.offsetX = 0;
+            cropState.offsetY = 0;
+            zoomSlider.value = 100;
+            zoomValue.textContent = '100%';
+            renderImage();
+        });
+
+        // Rendering dell'immagine sul canvas con specifiche hardware
+        function renderImage() {
+            if (!loadedImage) return;
+
+            // 1. Pulisci con sfondo nero (obbligatorio per i bordi non riempiti)
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, 240, 240);
+
+            const w = loadedImage.width;
+            const h = loadedImage.height;
+            const minDim = Math.min(w, h);
+
+            // Ritaglio centrale 1:1 scalato con lo zoom dell'utente
+            const cropSize = minDim / cropState.zoom;
+            const sourceX = (w - cropSize) / 2 + cropState.offsetX;
+            const sourceY = (h - cropSize) / 2 + cropState.offsetY;
+
+            // Salva lo stato del canvas per ritaglio della maschera ad angoli arrotondati
+            ctx.save();
+
+            // Crea un tracciato con angoli arrotondati da 17 pixel (Margine di sicurezza hardware)
+            const r = 17;
+            ctx.beginPath();
+            ctx.moveTo(r, 0);
+            ctx.lineTo(240 - r, 0);
+            ctx.quadraticCurveTo(240, 0, 240, r);
+            ctx.lineTo(240, 240 - r);
+            ctx.quadraticCurveTo(240, 240, 240 - r, 240);
+            ctx.lineTo(r, 240);
+            ctx.quadraticCurveTo(0, 240, 0, 240 - r);
+            ctx.lineTo(0, r);
+            ctx.quadraticCurveTo(0, 0, r, 0);
+            ctx.closePath();
+            ctx.clip(); // Ritaglia tutto ciò che esce dagli angoli di sicurezza
+
+            // Disegna l'immagine ritagliata e riscalata nello spazio 240x240
+            ctx.drawImage(
+                loadedImage,
+                sourceX, sourceY, cropSize, cropSize, // Ritaglio sorgente
+                0, 0, 240, 240                       // Destinazione schermo
+            );
+
+            ctx.restore(); // Ripristina lo stato originale del canvas
+        }
+
+        // Esporta in formato binario reale Windows 24-bit BMP (RGB888)
+        downloadBtn.addEventListener('click', () => {
+            if (!loadedImage) return;
+
+            const imgData = ctx.getImageData(0, 0, 240, 240);
+            const data = imgData.data; // Array RGBA ordinato per riga
+
+            const width = 240;
+            const height = 240;
+
+            // La dimensione della riga nel formato BMP deve essere un multiplo di 4 byte
+            const rowSize = Math.floor((3 * width + 3) / 4) * 4;
+            const pixelDataSize = rowSize * height;
+            const fileSize = 54 + pixelDataSize; // 54 byte per gli header standard
+
+            const buffer = new ArrayBuffer(fileSize);
+            const view = new DataView(buffer);
+
+            // 1. BMP FILE HEADER (14 byte)
+            view.setUint8(0, 0x42); // 'B'
+            view.setUint8(1, 0x4D); // 'M'
+            view.setUint32(2, fileSize, true); // Dimensione file complessiva (Little Endian)
+            view.setUint16(6, 0, true); // Riservato 1
+            view.setUint16(8, 0, true); // Riservato 2
+            view.setUint32(10, 54, true); // Offset dove iniziano i pixel reali (54 byte)
+
+            // 2. DIB HEADER - BITMAPINFOHEADER (40 byte)
+            view.setUint32(14, 40, true); // Dimensione dell'header DIB (40 byte)
+            view.setInt32(18, width, true); // Larghezza immagine (240)
+            view.setInt32(22, height, true); // Altezza immagine (240, positivo = bottom-to-top)
+            view.setUint16(26, 1, true); // Piani di colore (1)
+            view.setUint16(28, 24, true); // Profondità colore (24-bit per pixel)
+            view.setUint32(30, 0, true); // Compressione (0 = BI_RGB, non compresso)
+            view.setUint32(34, pixelDataSize, true); // Dimensione dell'array dei pixel
+            view.setInt32(38, 2835, true); // Ris. Orizzontale (circa 72 DPI)
+            view.setInt32(42, 2835, true); // Ris. Verticale
+            view.setUint32(46, 0, true); // Numero di colori nella palette (0 = default)
+            view.setUint32(50, 0, true); // Colori importanti (0 = tutti)
+
+            // 3. PIXEL DATA (Format BGR, partendo dal basso verso l'alto dell'immagine)
+            let offset = 54;
+            for (let y = height - 1; y >= 0; y--) {
+                const rowOffset = y * width * 4;
+                let xOffset = 0;
+                for (let x = 0; x < width; x++) {
+                    const idx = rowOffset + x * 4;
+                    const r = data[idx];
+                    const g = data[idx + 1];
+                    const b = data[idx + 2];
+
+                    // I file BMP memorizzano i pixel in ordine B, G, R
+                    view.setUint8(offset + xOffset, b);
+                    view.setUint8(offset + xOffset + 1, g);
+                    view.setUint8(offset + xOffset + 2, r);
+                    xOffset += 3;
+                }
+                // Padding di allineamento a 4 byte per riga
+                for (let p = xOffset; p < rowSize; p++) {
+                    view.setUint8(offset + p, 0);
+                }
+                offset += rowSize;
+            }
+
+            // Generazione del file Blob binario e download automatico
+            const blob = new Blob([buffer], { type: 'image/bmp' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'wp1.bmp'; // Il nome standard atteso da MIDI Captain
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
