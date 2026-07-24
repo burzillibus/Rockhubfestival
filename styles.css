@@ -76,7 +76,9 @@ h2 {
 }
 
 /* Box panel condiviso da tutte le sezioni */
+#eventi-passati .container,
 #band .container,
+#lineup .container,
 #sponsor .container,
 #contatti .container,
 #suona-con-noi .container,
@@ -132,6 +134,56 @@ header {
     color: var(--accent-color);
 }
 
+/* --- DROPDOWN MENU --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(13, 13, 13, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    min-width: 160px;
+    padding: 6px 0;
+    z-index: 1001;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.dropdown-menu li a:hover {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-icon {
+    font-size: 0.65rem;
+    margin-left: 4px;
+    transition: transform 0.2s;
+}
+
+.dropdown:hover .dropdown-icon,
+.dropdown.active .dropdown-icon {
+    transform: rotate(180deg);
+}
+
 .menu-toggle {
     display: none;
     /* Nascosto su desktop */
@@ -145,6 +197,146 @@ header {
     background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
     justify-content: center;
     text-align: center;
+}
+
+/* --- COMING SOON --- */
+.coming-soon-box {
+    width: min(1200px, calc(100% - 80px));
+    background-color: rgba(8, 8, 8, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 48px 60px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+}
+
+.coming-soon-dates {
+    font-family: var(--font-headings);
+    font-size: 5rem;
+    font-weight: 400;
+    color: var(--text-color);
+    letter-spacing: 4px;
+    text-shadow: 0 4px 18px rgba(255, 62, 62, 0.55), 0 8px 20px rgba(0, 0, 0, 0.65);
+    margin: 10px 0;
+    line-height: 1.1;
+}
+
+.coming-soon-title {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    color: var(--accent-color);
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.coming-soon-text {
+    font-family: var(--font-headings);
+    font-size: 4.5rem;
+    color: var(--text-color);
+    letter-spacing: 4px;
+    text-shadow: 0 0 28px rgba(255, 62, 62, 0.5), 0 4px 16px rgba(0, 0, 0, 0.6);
+    margin-bottom: 28px;
+    line-height: 1;
+}
+
+.coming-soon-hint {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.coming-soon-when {
+    font-size: 1.05rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+/* --- EVENTS SLIDER --- */
+.events-slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 12px 4px 20px;
+}
+
+.events-slider::-webkit-scrollbar {
+    height: 10px;
+}
+
+.events-slider::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+}
+
+.events-slider::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.event-card-link {
+    display: block;
+    scroll-snap-align: start;
+    flex: 0 0 300px;
+    text-decoration: none;
+}
+
+.event-card {
+    background-color: #1a1a1a;
+    padding: 28px 24px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.event-card-year {
+    font-family: var(--font-headings);
+    font-size: 3.2rem;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.event-card h3 {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+.event-card-dates {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.event-card-location {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 18px;
+}
+
+.event-card-location i {
+    color: var(--accent-color);
+    margin-right: 4px;
+}
+
+.event-card-cta {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero-content {
@@ -593,11 +785,42 @@ footer {
         font-size: 1.2rem;
     }
 
+    /* Dropdown mobile */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        display: none;
+        box-shadow: none;
+        border: none;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li a {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .coming-soon-box {
+        padding: 32px 20px;
+    }
+
+    .coming-soon-text {
+        font-size: 3rem;
+    }
+
     .section {
         padding: 80px 15px;
     }
 
     #band .container,
+    #eventi-passati .container,
+    #lineup .container,
     #sponsor .container,
     #contatti .container,
     #mappa .container {

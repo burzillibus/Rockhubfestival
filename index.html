@@ -30,9 +30,14 @@
         <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#band">Line-up</a></li>
-
-                <li><a href="#sponsor">Sponsor</a></li>
+                <li class="dropdown">
+                    <a href="#eventi-passati" class="dropdown-toggle">Eventi Passati <i
+                            class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./eventi/giugno-2026.html">Giugno 2026</a></li>
+                    </ul>
+                </li>
+                <li style="display:none"><a href="#sponsor">Sponsor</a></li>
                 <li><a href="#contatti">Contatti</a></li>
                 <li><a href="#mappa">Come Raggiungerci</a></li>
                 <li><a href="#suona-con-noi">Suona con Noi</a></li>
@@ -45,9 +50,7 @@
             <h1>
                 <div>
                     <img src="./resources/images/rockhub_logo.png" alt="Rockhub Logo" class="logo-icon">
-                    <p>
-                        26 - 27 - 28 Giugno 2026
-                    </p>
+                    <p class="coming-soon-dates">Coming soon!!!</p>
                     <a href="https://route66musicpub.it/" target="_blank" rel="noopener noreferrer"
                         aria-label="Visita il sito di Route66 Music Pub">
                         <img src="./resources/images/route66_logo.png" alt="Route66 Logo" class="logo-icon">
@@ -57,161 +60,33 @@
             <div class="event-info">
                 <p class="event-location">Route66, Asciano (PI)</p>
                 <h2 class="event-subtitle">RockHub Festival</h2>
-                <p class="event-description">Preparati per tre giorni di pura energia! RockHub Festival 2026 porta il
-                    meglio della scena rock emergente locale nel cuore della Toscana. Un'esperienza unica fatta di
-                    musica potente, adrenalina e una location iconica come il Route66 di Asciano.
-
-                    Saranno tre giorni di pura adrenalina e rock'n'roll, con una line-up che spazia dal rock alternativo
-                    al blues, dal grunge al post-rock.
-                    <br>
-                    E non finisce qui. In occasione del centenario della costruzione della storica e leggendaria Route66
-                    inizieremo a inondare di musica anche la giornata di domenica, con un programma ricco di band che si
-                    esibiranno a partire dalle 15:00 fino a tarda sera.
-
-                    Non è solo un festival, è un incontro di anime e rock music!
-                </p>
+                <p class="event-description">Tenetevi pronti, grosse novit&agrave; in arrivo!<br>
+                    Quando? Ottobre potrebbe essere un buon mese per tenersi liberi...!</p>
             </div>
-
         </div>
     </section>
 
 
-    <section id="band" class="section">
+    <section id="eventi-passati" class="section">
         <div class="container">
-            <h2>Line-up</h2>
+            <h2>Eventi Passati</h2>
             <div class="carousel">
                 <div class="carousel-row">
                     <div class="carousel-header">
-                        <h3>Venerdì 26 Giugno</h3>
+                        <h3>Edizioni</h3>
                         <div class="carousel-controls">
                             <button class="carousel-button" type="button" aria-label="Scorri a sinistra">‹</button>
                             <button class="carousel-button" type="button" aria-label="Scorri a destra">›</button>
                         </div>
                     </div>
                     <div class="carousel-track">
-                        <a class="band-card-link" href="./bands/oredisole.html"
-                            aria-label="Apri la pagina di Oredisole">
+                        <a class="band-card-link" href="./eventi/giugno-2026.html"
+                            aria-label="Vai all'evento RockHub Festival Giugno 2026">
                             <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">OD</div>
-                                <h3>Oredisole</h3>
-                                <p>21:30 - 22:30</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/moscato.html"
-                            aria-label="Apri la pagina di Moscato Blues Band">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">MB</div>
-                                <h3>Moscato Blues Band</h3>
-                                <p>22:30 - 23:30</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/reel-tape.html"
-                            aria-label="Apri la pagina di Reel Tape">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">RT</div>
-                                <h3>Reel Tape</h3>
-                                <p>23:30 - 00:30</p>
-                            </article>
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-row">
-                    <div class="carousel-header">
-                        <h3>Sabato 27 Giugno</h3>
-                        <div class="carousel-controls">
-                            <button class="carousel-button" type="button" aria-label="Scorri a sinistra">‹</button>
-                            <button class="carousel-button" type="button" aria-label="Scorri a destra">›</button>
-                        </div>
-                    </div>
-                    <div class="carousel-track">
-                        <a class="band-card-link" href="./bands/fullflow.html"
-                            aria-label="Apri la pagina di The Full Flow Project">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">FF</div>
-                                <h3>The Full Flow Project</h3>
-                                <p>21:30 - 22:30</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/mothers.html"
-                            aria-label="Apri la pagina di Mother's Well">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">MW</div>
-                                <h3>Mother's Well</h3>
-                                <p>22:30 - 23:30</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/aftermath.html"
-                            aria-label="Apri la pagina di Aftermath">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">AF</div>
-                                <h3>Aftermath</h3>
-                                <p>23:30 - 00:30</p>
-                            </article>
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-row">
-                    <div class="carousel-header">
-                        <h3>Domenica 28 Giugno</h3>
-                        <div class="carousel-controls">
-                            <button class="carousel-button" type="button" aria-label="Scorri a sinistra">‹</button>
-                            <button class="carousel-button" type="button" aria-label="Scorri a destra">›</button>
-                        </div>
-                    </div>
-                    <div class="carousel-track">
-                        <a class="band-card-link" href="./bands/monochromej.html"
-                            aria-label="Apri la pagina di Monochrome J">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">MJ</div>
-                                <h3>Monochrome J</h3>
-                                <p>15:00 - 16:00</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/kimaera.html" aria-label="Apri la pagina di Kimaera">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">
-                                    KI
-                                </div>
-                                <h3>Kimaera</h3>
-                                <p>16:00 - 17:00</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/yourghost.html"
-                            aria-label="Apri la pagina di Your Ghost">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">MT</div>
-                                <h3>Your Ghost</h3>
-                                <p>17:00 - 18:00</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/framework.html"
-                            aria-label="Apri la pagina di Frameworks">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">FR</div>
-                                <h3>Frameworks</h3>
-                                <p>18:00 - 19:00</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/noblesse.html" aria-label="Apri la pagina di Noblesse">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">NV</div>
-                                <h3>Noblesse</h3>
-                                <p>21:30 - 22:30</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/lips.html" aria-label="Apri la pagina di L.I.P.S.">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">LP</div>
-                                <h3>L.I.P.S.</h3>
-                                <p>22:30 - 23:30</p>
-                            </article>
-                        </a>
-                        <a class="band-card-link" href="./bands/antartika.html"
-                            aria-label="Apri la pagina di Antartika">
-                            <article class="band-card">
-                                <div class="band-logo" aria-hidden="true">AN</div>
-                                <h3>Antartika</h3>
-                                <p>23:30 - 00:30</p>
+                                <div class="band-logo" aria-hidden="true">26</div>
+                                <h3>RockHub Festival</h3>
+                                <p>26 · 27 · 28 Giugno 2026</p>
+                                <p>Route66, Asciano (PI)</p>
                             </article>
                         </a>
                     </div>
@@ -220,87 +95,6 @@
         </div>
     </section>
 
-    <section id="sponsor" class="section">
-        <div class="container">
-            <h2>Sponsor</h2>
-            <div class="sponsor-grid">
-                <a class="band-card-link" href="https://route66musicpub.it/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Visita il sito di Route66 Music Pub">
-                    <article class="band-card">
-                        <img src="./resources/images/route66_logo.png" alt="Route66 Music Pub Logo"
-                            class="sponsor-logo">
-                        <h3>Route66 Music Pub</h3>
-                        <p>Main Food & Beverage Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="https://www.incontro.it/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Visita il sito di Radio Incontro">
-                    <article class="band-card">
-                        <img src="./resources/images/sponsor/incontro.png" alt="Radio Incontro Logo"
-                            class="sponsor-logo">
-                        <h3>Radio Incontro</h3>
-                        <p>Main Audio Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="https://shop.niccolaimusica.it" target="_blank"
-                    rel="noopener noreferrer" aria-label="Visita il sito di Niccolai">
-                    <article class="band-card">
-                        <img src="./resources/images/sponsor/niccolai-logo.jpg" alt="Niccolai Logo"
-                            class="sponsor-logo">
-                        <h3>Niccolai</h3>
-                        <p>Main Instrument Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link"
-                    href="https://www.instagram.com/explore/locations/224151604945643/undersound-lucca/" target="_blank"
-                    rel="noopener noreferrer" aria-label="Visita il sito di Undersound Lucca">
-                    <article class="band-card">
-                        <img src="./resources/images/sponsor/undersound.jpg" alt="Undersound Lucca Logo"
-                            class="sponsor-logo">
-                        <h3>Undersound Lucca</h3>
-                        <p>Main Reharsal Partner</p>
-                    </article>
-                </a>
-
-                <a class="band-card-link" href="http://www.gaprecordstore.it/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Visita il sito di Gap Record Store">
-                    <article class="band-card">
-                        <img src="./resources/images/sponsor/gap-recordstore.png" alt="Gap Record Store Logo"
-                            class="sponsor-logo">
-                        <h3>Gap Record Store</h3>
-                        <p>Record Store Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="https://www.sanantonio42.it/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Visita il sito di Sant'Antonio 42">
-                    <article class="band-card">
-                        <img src="./resources/images/sponsor/santantonio.png" alt="Sant'Antonio 42 Logo"
-                            class="sponsor-logo">
-                        <h3>Sant'Antonio 42</h3>
-                        <p>Record Store Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="https://www.facebook.com/lightinktattoostudio/?locale2=it_IT&_rdr"
-                    target="_blank" rel="noopener noreferrer" aria-label="Visita il sito di Light Ink Studio">
-                    <article class="band-card">
-                        <img src="./resources/images/sponsor/lightink.jpg" alt="Light Ink Studio Logo"
-                            class="sponsor-logo">
-                        <h3>Light Ink Studio</h3>
-                        <p>Tattoo Studio Partner</p>
-                    </article>
-                </a>
-                <a class="band-card-link" href="https://www.vuefferacing.com/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Visita il sito di Vuefferacing">
-                    <article class="band-card">
-                        <img src="./resources/images/sponsor/vuefferacing.png" alt="Vuefferacing Logo"
-                            class="sponsor-logo">
-                        <h3>Vuefferacing</h3>
-                        <p>Main Partner for Technical Motorcycle Apparel</p>
-                    </article>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <section id="contatti" class="section">
         <div class="container">
@@ -358,24 +152,41 @@
     </footer>
 
     <script>
-        // Seleziona gli elementi del DOM
         const mobileMenu = document.getElementById('mobile-menu');
         const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('.navbar a');
+        const navLinks = document.querySelectorAll('.navbar > ul > li > a');
 
-        // Aggiunge un evento 'click' all'hamburger per mostrare/nascondere il menu
         mobileMenu.addEventListener('click', () => {
-            navbar.classList.toggle('active'); // Aggiunge/rimuove la classe 'active'
+            navbar.classList.toggle('active');
         });
 
-        // Chiude il menu mobile quando si clicca su un link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navbar.classList.remove('active');
+                if (!link.classList.contains('dropdown-toggle')) {
+                    navbar.classList.remove('active');
+                }
             });
         });
 
-        // Controllo dei carousel a riga per band e sponsor
+        // Dropdown toggle su mobile
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    e.preventDefault();
+                    toggle.closest('.dropdown').classList.toggle('active');
+                }
+            });
+        });
+
+        // Chiudi dropdown cliccando fuori
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
+            }
+        });
+
+        // placeholder per compatibilità — nessun carousel in questa pagina
         document.querySelectorAll('.carousel-row').forEach(row => {
             const track = row.querySelector('.carousel-track');
             const buttons = row.querySelectorAll('.carousel-button');
