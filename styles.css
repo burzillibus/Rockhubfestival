@@ -134,56 +134,6 @@ header {
     color: var(--accent-color);
 }
 
-/* --- DROPDOWN MENU --- */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(13, 13, 13, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
-    min-width: 160px;
-    padding: 6px 0;
-    z-index: 1001;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown.active .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.dropdown-menu li a:hover {
-    color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.dropdown-icon {
-    font-size: 0.65rem;
-    margin-left: 4px;
-    transition: transform 0.2s;
-}
-
-.dropdown:hover .dropdown-icon,
-.dropdown.active .dropdown-icon {
-    transform: rotate(180deg);
-}
-
 .menu-toggle {
     display: none;
     /* Nascosto su desktop */

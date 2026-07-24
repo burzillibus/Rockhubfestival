@@ -28,8 +28,9 @@
         <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#eventi-passati">Eventi Passati</a></li>
                 <li><a href="#lineup">Line-up</a></li>
-                <li style=\"display:none\"><a href=\"#sponsor\">Sponsor</a></li>
+                <li style="display:none"><a href="#sponsor">Sponsor</a></li>
                 <li><a href="../index.html#contatti">Contatti</a></li>
                 <li><a href="../index.html#mappa">Come Raggiungerci</a></li>
                 <li><a href="../index.html#suona-con-noi">Suona con Noi</a></li>
@@ -299,9 +300,12 @@
     </footer>
 
     <script>
+        // Rimuovi .active da tutti i dropdown al caricamento
+        document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
+
         const mobileMenu = document.getElementById('mobile-menu');
         const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('.navbar a');
+        const navLinks = document.querySelectorAll('.navbar > ul > li > a');
 
         mobileMenu.addEventListener('click', () => {
             navbar.classList.toggle('active');
@@ -309,10 +313,13 @@
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navbar.classList.remove('active');
+                if (!link.classList.contains('dropdown-toggle')) {
+                    navbar.classList.remove('active');
+                }
             });
         });
 
+        // Carousel
         document.querySelectorAll('.carousel-row').forEach(row => {
             const track = row.querySelector('.carousel-track');
             const buttons = row.querySelectorAll('.carousel-button');
