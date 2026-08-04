@@ -1,0 +1,4 @@
+import { beforeEach, expect, it, vi } from 'vitest';
+import { installRegistrationForms } from './main';
+beforeEach(() => { document.body.innerHTML = '<form data-registration="users"><input name="fullName" value="Ada"><input name="email" value="ada@example.it"><input type="checkbox" name="privacyAccepted" checked><button>Invia</button><p role="status"></p></form>'; });
+it('invoca l API senza segreti e mostra successo', async () => { const fetchMock = vi.fn().mockResolvedValue(new Response('{}', { status: 202 })); vi.stubGlobal('fetch', fetchMock); installRegistrationForms(); document.querySelector('form')!.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true })); await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledOnce()); expect(fetchMock.mock.calls[0][0]).toContain('/v1/registrations/users'); expect(document.querySelector('[role=status]')!.textContent).toContain('ricevuta'); });
