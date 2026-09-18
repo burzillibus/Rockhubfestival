@@ -68,15 +68,29 @@
 
     const image = document.createElement('img');
     image.className = 'band-photo';
-    image.src = `../resources/bands/${slug}/band.png`;
     image.alt = `${info.name} - foto band`;
-    image.addEventListener('error', () => {
-        if (!image.src.endsWith('/band.svg')) {
-            image.src = `../resources/bands/${slug}/band.svg`;
+
+    const imageCandidates = [
+        `../resources/bands/${slug}/band.png`,
+        `../resources/bands/${slug}/band.jpg`,
+        `../resources/bands/${slug}/band.jfif`,
+        `../resources/bands/${slug}/band.jpeg`,
+        `../resources/bands/${slug}/band.svg`
+    ];
+
+    let imageIndex = 0;
+    const tryNextImage = () => {
+        if (imageIndex >= imageCandidates.length) {
+            image.remove();
             return;
         }
-        image.remove();
-    });
+
+        image.src = imageCandidates[imageIndex];
+        imageIndex += 1;
+    };
+
+    image.addEventListener('error', tryNextImage);
+    tryNextImage();
 
     const description = document.createElement('p');
     description.className = 'band-description';
