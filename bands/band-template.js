@@ -12,7 +12,13 @@
         'yourghost': { name: 'Your Ghost' },
         'lips': { name: 'L.I.P.S.' },
         'antartika': { name: 'Antartika' },
-        'noblesse': { name: 'Noblesse' }
+        'noblesse': { name: 'Noblesse' },
+        'playte-aegain': { name: 'PLAYTE AGAIN' },
+        'fattoria-spaziale-dello-zio-bruno': { name: 'La Fattoria Spaziale dello zio Bruno' },
+        'classe-99': { name: 'Classe 99' },
+        'backfire': { name: 'Backfire' },
+        'dreal': { name: 'Dreal' },
+        'sangue-impuro': { name: 'Sangue Impuro' }
     };
 
     const slug = window.location.pathname.split('/').pop().replace('.html', '');
@@ -40,7 +46,7 @@
         <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="../index.html#home">Home</a></li>
-                <li><a href="../index.html#band">Line-up</a></li>
+                <li><a href="../index.html#lineup">Line-up</a></li>
                 <li><a href="../index.html#sponsor">Sponsor</a></li>
                 <li><a href="../index.html#contatti">Contatti</a></li>
                 <li><a href="../index.html#mappa">Come Raggiungerci</a></li>
@@ -65,6 +71,10 @@
     image.src = `../resources/bands/${slug}/band.png`;
     image.alt = `${info.name} - foto band`;
     image.addEventListener('error', () => {
+        if (!image.src.endsWith('/band.svg')) {
+            image.src = `../resources/bands/${slug}/band.svg`;
+            return;
+        }
         image.remove();
     });
 
@@ -74,7 +84,7 @@
 
     const backLink = document.createElement('a');
     backLink.className = 'back-link';
-    backLink.href = '../index.html#band';
+    backLink.href = '../index.html#lineup';
     backLink.textContent = 'Torna alla Line-up';
 
     root.innerHTML = '';

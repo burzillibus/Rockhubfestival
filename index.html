@@ -18,22 +18,24 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1630832325363251');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1630832325363251&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1630832325363251');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1630832325363251&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 
 
 </head>
@@ -48,6 +50,7 @@ src="https://www.facebook.com/tr?id=1630832325363251&ev=PageView&noscript=1"
         <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#lineup">Line-up</a></li>
                 <li><a href="#eventi-passati">Eventi Passati</a></li>
                 <li style="display:none"><a href="#sponsor">Sponsor</a></li>
                 <li><a href="#contatti">Contatti</a></li>
@@ -62,7 +65,7 @@ src="https://www.facebook.com/tr?id=1630832325363251&ev=PageView&noscript=1"
             <h1>
                 <div>
                     <img src="./resources/images/rockhub_logo_rocktober.png" alt="Rockhub Logo" class="logo-icon">
-                    <p class="coming-soon-dates">Coming soon!!!</p>
+                    <p class="coming-soon-dates">1 - 2 - 3 - 4 Ottobre 2026</p>
                     <a href="https://route66musicpub.it/" target="_blank" rel="noopener noreferrer"
                         aria-label="Visita il sito di Route66 Music Pub">
                         <img src="./resources/images/route66_logo.png" alt="Route66 Logo" class="logo-icon">
@@ -71,9 +74,157 @@ src="https://www.facebook.com/tr?id=1630832325363251&ev=PageView&noscript=1"
             </h1>
             <div class="event-info">
                 <p class="event-location">Route66, Asciano (PI)</p>
-                <h2 class="event-subtitle">RockHub Festival</h2>
-                <p class="event-description">Tenetevi pronti, grosse novit&agrave; in arrivo!<br>
-                    Quando? Ottobre potrebbe essere un buon mese per tenersi liberi...!</p>
+                <h2 class="event-subtitle">ROCKTOBER FESTIVAL</h2>
+                <p class="event-byline">by Rockhub Festival</p>
+                <p class="event-description">Quattro serate di musica dal vivo birra e sorprese al Route66 di Asciano!
+                    Dodici band
+                    sul palco del vostro festival indipendente preferito!.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="lineup" class="section">
+        <div class="container">
+            <h2>Line-up Ottobre 2026</h2>
+            <div class="carousel">
+                <div class="carousel-row">
+                    <div class="carousel-header">
+                        <h3>Gioved&igrave; 1 Ottobre</h3>
+                        <div class="carousel-controls">
+                            <button class="carousel-button" type="button" aria-label="Scorri a sinistra">‹</button>
+                            <button class="carousel-button" type="button" aria-label="Scorri a destra">›</button>
+                        </div>
+                    </div>
+                    <div class="carousel-track">
+                        <a class="band-card-link" href="./bands/playte-aegain.html"
+                            aria-label="Apri la pagina di PLAYTE AGAIN">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">PA</div>
+                                <h3>PLAYTE AGAIN</h3>
+                                <p>21:00 - 22:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/fattoria-spaziale-dello-zio-bruno.html"
+                            aria-label="Apri la pagina de La Fattoria Spaziale dello zio Bruno">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">FZ</div>
+                                <h3>La Fattoria Spaziale dello zio Bruno</h3>
+                                <p>22:00 - 23:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/fullflow.html"
+                            aria-label="Apri la pagina di Full Flow Project">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">FF</div>
+                                <h3>Full Flow Project</h3>
+                                <p>23:00 - 00:00</p>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-row">
+                    <div class="carousel-header">
+                        <h3>Venerd&igrave; 2 Ottobre</h3>
+                        <div class="carousel-controls">
+                            <button class="carousel-button" type="button" aria-label="Scorri a sinistra">‹</button>
+                            <button class="carousel-button" type="button" aria-label="Scorri a destra">›</button>
+                        </div>
+                    </div>
+                    <div class="carousel-track">
+                        <a class="band-card-link" href="./bands/framework.html"
+                            aria-label="Apri la pagina di Frameworks">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">FR</div>
+                                <h3>Frameworks</h3>
+                                <p>21:00 - 22:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/classe-99.html"
+                            aria-label="Apri la pagina di Classe 99">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">C99</div>
+                                <h3>Classe 99</h3>
+                                <p>22:00 - 23:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/backfire.html" aria-label="Apri la pagina di Backfire">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">BF</div>
+                                <h3>Backfire</h3>
+                                <p>23:00 - 00:00</p>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-row">
+                    <div class="carousel-header">
+                        <h3>Sabato 3 Ottobre</h3>
+                        <div class="carousel-controls">
+                            <button class="carousel-button" type="button" aria-label="Scorri a sinistra">‹</button>
+                            <button class="carousel-button" type="button" aria-label="Scorri a destra">›</button>
+                        </div>
+                    </div>
+                    <div class="carousel-track">
+                        <a class="band-card-link" href="./bands/reel-tape.html"
+                            aria-label="Apri la pagina di Reel Tape">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">RT</div>
+                                <h3>Reel Tape</h3>
+                                <p>21:00 - 22:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/kimaera.html" aria-label="Apri la pagina di Kimaera">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">KI</div>
+                                <h3>Kimaera</h3>
+                                <p>22:00 - 23:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/dreal.html" aria-label="Apri la pagina di Dreal">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">DR</div>
+                                <h3>Dreal</h3>
+                                <p>23:00 - 00:00</p>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-row">
+                    <div class="carousel-header">
+                        <h3>Domenica 4 Ottobre</h3>
+                        <div class="carousel-controls">
+                            <button class="carousel-button" type="button" aria-label="Scorri a sinistra">‹</button>
+                            <button class="carousel-button" type="button" aria-label="Scorri a destra">›</button>
+                        </div>
+                    </div>
+                    <div class="carousel-track">
+                        <a class="band-card-link" href="./bands/moscato.html"
+                            aria-label="Apri la pagina di Moscato Blues Band">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">MB</div>
+                                <h3>Moscato</h3>
+                                <p>21:00 - 22:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/antartika.html"
+                            aria-label="Apri la pagina di Antartika">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">AN</div>
+                                <h3>Antartica</h3>
+                                <p>22:00 - 23:00</p>
+                            </article>
+                        </a>
+                        <a class="band-card-link" href="./bands/sangue-impuro.html"
+                            aria-label="Apri la pagina di Sangue Impuro">
+                            <article class="band-card">
+                                <div class="band-logo" aria-hidden="true">SI</div>
+                                <h3>Sangue Impuro</h3>
+                                <p>23:00 - 00:00</p>
+                            </article>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

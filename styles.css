@@ -330,6 +330,15 @@ header {
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
+.event-byline {
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #cfcfcf;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
 .event-description {
     margin-top: 16px;
     font-size: 1.35rem;
