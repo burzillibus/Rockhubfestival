@@ -149,6 +149,28 @@ header {
     text-align: center;
 }
 
+.home-logo {
+    display: block;
+    width: min(380px, 75vw);
+    height: auto;
+    margin: 0 auto;
+}
+
+.home-message {
+    margin: 18px 16px 0;
+    color: var(--text-color);
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.home-message-highlight {
+    display: block;
+    color: var(--accent-color);
+    font-size: 2.6rem;
+}
+
 /* --- COMING SOON --- */
 .coming-soon-box {
     width: min(1200px, calc(100% - 80px));
@@ -782,7 +804,6 @@ footer {
 
     #band .container,
     #eventi-passati .container,
-    #lineup .container,
     #sponsor .container,
     #contatti .container,
     #mappa .container {
