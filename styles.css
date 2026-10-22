@@ -171,6 +171,109 @@ header {
     font-size: 2.6rem;
 }
 
+.home-cta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: min(980px, 100%);
+    margin: 30px auto 0;
+}
+
+.home-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 220px;
+    padding: 28px 24px;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(32, 24, 24, 0.94), rgba(7, 7, 7, 0.92));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42);
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.home-cta:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 62, 62, 0.55);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.52);
+}
+
+.home-cta-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.home-cta-heading i {
+    flex: 0 0 auto;
+    color: var(--accent-color);
+    font-size: 1.6rem;
+}
+
+.home-cta h2 {
+    margin-bottom: 0;
+    color: var(--accent-color);
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.home-cta p {
+    max-width: 34ch;
+    color: rgba(242, 242, 242, 0.82);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.home-cta-button {
+    display: inline-block;
+    margin-top: 2px;
+    padding: 10px 22px;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.home-cta-button:hover {
+    background-color: #d92e2e;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .home-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 24px;
+    }
+
+    .home-cta {
+        min-height: 180px;
+        padding: 22px 18px;
+    }
+
+    .home-cta h2 {
+        font-size: 1.7rem;
+    }
+
+    .home-cta-heading {
+        gap: 9px;
+    }
+}
+
 /* --- COMING SOON --- */
 .coming-soon-box {
     width: min(1200px, calc(100% - 80px));
